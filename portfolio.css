@@ -1,0 +1,131 @@
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    background-color: #f0f8ff;
+    color: #333; 
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #bbe6a6;
+    max-width: 800px;     /* ограничивает ширину блока */
+    width: 100%;          /* пусть занимает всю доступную ширину до 800px */
+    margin: 0 auto;       /* центрирует блок по горизонтали */
+    padding: 20px;        /* чтобы контент не прилипал к краям */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-list li {
+    list-style: none;
+    font-size: 1.2em;
+    margin: 15px 0;
+    padding-bottom: 15px;  
+}
+
+.project-list a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e0f7fa;
+    transition: background-color 0.3s ease;
+
+}
+
+.project-list a:hover {
+    background-color: #b2ebf2;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.about {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.skills {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 50px;
+    background-color: #bbe6a6;
+    border-radius: 10px;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    margin-bottom: 20px;
+}
+
+.skills li div:first-child {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    direction: ltr;
+}
+
+.progress {
+    width: 0;
+    background-color: #4caf50;
+    height: 100%;
+    color: white;
+    text-align: right;
+    padding-right: 8px;
+    line-height: 20px;
+    border-radius: 20px 0 0 20px;
+    transition: width 1s ease;
+    box-sizing: border-box;
+    direction: ltr;
+}
+
+.progress:hover {
+    background-color: #45a049;
+}
+
+
+
+
