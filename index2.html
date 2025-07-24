@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        .montserrat {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        #text {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #languages {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .center-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #back {
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 8px; /* добавьте эту строку */
+        }
+
+        #back:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            #text {
+                margin: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #back {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+        }
+
+        @media (min-width:768px) and (max-width: 1024px) {
+            #text {
+                font-size: 30px;
+                margin: 20px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button id="languages">HE</button>
+    <div class="center-block">
+        <h1 id="text" data-en="The project is under development. It will be ready soon." data-he="הפרויקט נמצא בפיתוח. זה יהיה מוכן בקרוב.">The project is under development. It will be ready soon.</h1>
+        <h2><a href="index.html" id="back">To the portfolio</a></h2>
+    </div>
+</body>
+<script>
+    function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+            rect.top < window.innerHeight && rect.bottom >= 0
+            );
+        }
+
+        function animateProgressBars() {
+            document.querySelectorAll('.progress').forEach(progress => {
+                if (isInViewport(progress) && !progress.classList.contains('animated')) {
+                    const target = progress.getAttribute('data-percent');
+                    progress.style.width = target;
+                    progress.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateProgressBars);
+        window.addEventListener('load', animateProgressBars);
+
+        let currentLang = 'en';
+
+        document.getElementById('languages').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'he' : 'en';
+
+            // Меняем все тексты
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.dataset[currentLang]) {
+                el.textContent = el.dataset[currentLang];
+                }
+            });
+
+        // Обновляем надпись на кнопке
+        document.getElementById('languages').textContent =
+            currentLang === 'en' ? 'HE' : 'EN';
+        });
+
+        document.querySelectorAll('[data-en]').forEach(el => {
+            if (el.dataset[currentLang]) {
+            el.innerHTML = el.dataset[currentLang]; // меняем innerHTML, чтобы работали теги внутри текста
+            }
+        });
+</script>
+</html>
